@@ -54,7 +54,16 @@ This table outlines the hardware-to-software handshake that makes Sentinel-X a "
    streamlit run software/app.py
 
 
+### 🎮 Hardware Simulation (Tinkercad)
+You can test the logic and sensor-handshake of Sentinel-X virtually without any hardware.
 
+* 🔗 **[Run Live Simulation](https://www.tinkercad.com/things/bNYIJJSANWy-iotlabproject/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=hDkVdR3zKuxaY3sptgu0OuLWoT3wxsjvg98VTZyortg)**
+* **Instructions:** 1. Open the link and click **'Start Simulation'**.
+  2. Click the **PIR Sensor** to simulate movement.
+  3. Adjust the **Ultrasonic Sensor** distance to trigger the "Intrusion" logic.
+  4. Watch the **LCD Display** and listen for the **Buzzer** alert.
+
+  
 ### 🔌 System Connectivity & Pin-Outs
 <details>
 <summary><b>Click to expand full Hardware & Cloud Mapping</b></summary>
@@ -97,3 +106,4 @@ Arduino Uno     USB Cable     Laptop (PC)    Serial UART @ 9600 Baud
 Python Bridge   Boto3 SDK     AWS S3         HTTPS/SSL (Cloud Log)
 AWS S3 Bucket   API Fetch     Streamlit App  JSON Telemetry Stream
 ===========================================================================
+
