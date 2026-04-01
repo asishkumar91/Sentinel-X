@@ -58,9 +58,10 @@ This table outlines the hardware-to-software handshake that makes Sentinel-X a "
 You can test the logic and sensor-handshake of Sentinel-X virtually without any hardware.
 
 * 🔗 **[Run Live Simulation](https://www.tinkercad.com/things/bNYIJJSANWy-iotlabproject/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=hDkVdR3zKuxaY3sptgu0OuLWoT3wxsjvg98VTZyortg)**
-* **Instructions:** 1. Open the link and click **'Start Simulation'**.
-  2. Click the **PIR Sensor** to simulate movement.
-  3. Adjust the **Ultrasonic Sensor** distance to trigger the "Intrusion" logic.
+* **Instructions:**
+  1. Open the link and click **'Start Simulation'**.  
+  2. Click the **PIR Sensor** to simulate movement.  
+  3. Adjust the **Ultrasonic Sensor** distance to trigger the "Intrusion" logic.  
   4. Watch the **LCD Display** and listen for the **Buzzer** alert.
 
   
