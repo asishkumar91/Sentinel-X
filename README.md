@@ -52,3 +52,48 @@ This table outlines the hardware-to-software handshake that makes Sentinel-X a "
    pip install -r software/requirements.txt
    python software/bridge.py
    streamlit run software/app.py
+
+
+
+### 🔌 System Connectivity & Pin-Outs
+<details>
+<summary><b>Click to expand full Hardware & Cloud Mapping</b></summary>
+
+```text
+
+===========================================================================
+[ PHASE 1: SENSOR TO ARDUINO (THE EARS & EYES) ]
+===========================================================================
+COMPONENT       SENSOR PIN    ARDUINO PIN    FUNCTION
+-----------     ----------    -----------    ------------------------------
+PIR Motion      VCC           5V             System Power
+PIR Motion      GND           GND            Common Ground
+PIR Motion      OUT           Digital D2     Motion Trigger (Interrupt)
+
+Ultrasonic      VCC           5V             System Power
+Ultrasonic      GND           GND            Common Ground
+Ultrasonic      Trig          Digital D9     Pulse Trigger (Out)
+Ultrasonic      Echo          Digital D10    Signal Reception (In)
+
+===========================================================================
+[ PHASE 2: LOCAL FEEDBACK & DETERRENT (THE ACTION) ]
+===========================================================================
+COMPONENT       DEVICE PIN    ARDUINO PIN    FUNCTION
+-----------     ----------    -----------    ------------------------------
+LCD 16x2 (I2C)  VCC           5V             Display Power
+LCD 16x2 (I2C)  GND           GND            Common Ground
+LCD 16x2 (I2C)  SDA           Analog A4      Data Line (I2C)
+LCD 16x2 (I2C)  SCL           Analog A5      Clock Line (I2C)
+
+Piezo Buzzer    Positive (+)  Digital D8     Acoustic Alarm (Siren)
+Piezo Buzzer    Negative (-)  GND            Common Ground
+
+===========================================================================
+[ PHASE 3: GATEWAY & CLOUD (THE BRAIN) ]
+===========================================================================
+DEVICE A        INTERFACE     DEVICE B       PROTOCOL / DATA
+-----------     ----------    -----------    ------------------------------
+Arduino Uno     USB Cable     Laptop (PC)    Serial UART @ 9600 Baud
+Python Bridge   Boto3 SDK     AWS S3         HTTPS/SSL (Cloud Log)
+AWS S3 Bucket   API Fetch     Streamlit App  JSON Telemetry Stream
+===========================================================================
